@@ -1,6 +1,0 @@
-[[headers]]
-  for = "/*"
-    [headers.values]
-    X-Frame-Options = "ALLOWALL"
-    Content-Security-Policy = "frame-ancestors 'self' https://yourgamingwebsite.com;"
-    Access-Control-Allow-Origin = "*"
