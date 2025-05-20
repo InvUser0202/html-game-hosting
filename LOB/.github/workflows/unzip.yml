@@ -1,1 +1,22 @@
+name: Extract ZIP File
+on:
+  push:
+    paths:
+      - '**.zip'
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Extract ZIP
+        run: |
+          unzip *.zip
+          rm *.zip
+      - name: Commit Changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Extracted ZIP file"
+          git push origin main
 
